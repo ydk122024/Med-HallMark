@@ -1,3 +1,52 @@
-[
-   
-]
+{
+  "dataset_name": "Med-HallMark",
+  "description": "A benchmark designed for hallucination detection and evaluation within the medical multimodal domain .",
+  "creation_date": "2024-05-13",
+  "contributors": [
+    {
+      "name": "anonymity"
+    }
+  ],
+  "license": "CC BY 4.0",
+  "format": "json",
+  "version": "1.0",
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "name": "examples",
+      "description": "Records extracted from the example table, with their schema.",
+      "field": [
+        {
+            "id": 1,
+            "conversations": [
+                {
+                    "from": "human",
+                    "value": "Now you are an intelligent AI assistant evaluating the performance of a medical visual language model (Med-VLM) in a medical multimodal question and answer task, and you need to judge the correctness of the Med-VLM outputs as well as the type of hallucinations based on the image, the question, the response of the Med-VLM as well as the ground-truth of the image-question and answer pairs. The way in which the hierarchy of the hallucinations is classified is as follows:\n\n1. **Catastrophic Hallucinations**: Mostly wrong <judgments>, usually involving misjudging the global health status of the image, misidentifying organs, fabricating organs, fabricating pathologies or lesions on 'normal' images, or making incorrect descriptions of the image based on previous errors, which typically have disastrous impacts on clinical decision-making.\n\n2. **Critical Hallucinations**: Typically involving incorrect <descriptions> of organ functions or pathological categories, fabricating 'other types of lesions' on 'abnormal' images, resulting in 'misanalyses' or 'omissions', and incorrect descriptions of the causes of pathologies; these hallucinations are serious but slightly less severe than catastrophic hallucinations, still significantly affecting clinical diagnosis and decision-making.\n\n3. **Attribute Hallucinations**: Manifest as incorrect judgments or descriptions of the size, shape, location, and number of organs and pathologies.\n\n4. **Confusion prompt-induced hallucinations (prompt-induced Hallucinations)**: This type of hallucination is manifested in the input model of the prompt contains certain interference information, can be divided into two kinds: the first is the input contains a prefix that interferes with the degree of confidence of the model; the other is the prompt contains the description of the factual content of the image is opposite to that of the model caused by misleading. These types of illusions are usually caused by a lack of plausibility or factuality in the prompt, and examine the robustness of the model in a particular context.\n\n5. **Minor Hallucinations (Hallucinations without serious consequences)**: These hallucinations are often manifested as judgements about the modality of medical images, the way they are collected, and they do not have serious consequences for clinical diagnosis and treatment.\n\n6. **Correct Statements**: No hallucinations are present; the statement semantically matches the ground truth.\n\nHere is the question received by Med-VLM, the output of it and the ground-truth:\n\nquestion: Are the lungs normal?\nMed-VLM answer: Yes, the chest X-ray image shows normal lungs.\nground-truth: No\n\nPlease judge Med-VLM's hallucination type based on the above hallucination hierarchy according to the image and the ground-truth, just judge without giving any explanation."
+                },
+                {
+                    "from": "gpt",
+                    "value": "Catastrophic Hallucinations"
+                }
+            ],
+            "image": "rad/synpic49914.jpg",
+            "classification_label": 0
+        },
+        {
+            "id": 2,
+            "conversations": [
+                {
+                    "from": "human",
+                    "value": "Now you are an intelligent AI assistant evaluating the performance of a medical visual language model (Med-VLM) in a medical multimodal question and answer task, and you need to judge the correctness of the Med-VLM outputs as well as the type of hallucinations based on the image, the question, the response of the Med-VLM as well as the ground-truth of the image-question and answer pairs. The way in which the hierarchy of the hallucinations is classified is as follows:\n\n1. **Catastrophic Hallucinations**: Mostly wrong <judgments>, usually involving misjudging the global health status of the image, misidentifying organs, fabricating organs, fabricating pathologies or lesions on 'normal' images, or making incorrect descriptions of the image based on previous errors, which typically have disastrous impacts on clinical decision-making.\n\n2. **Critical Hallucinations**: Typically involving incorrect <descriptions> of organ functions or pathological categories, fabricating 'other types of lesions' on 'abnormal' images, resulting in 'misanalyses' or 'omissions', and incorrect descriptions of the causes of pathologies; these hallucinations are serious but slightly less severe than catastrophic hallucinations, still significantly affecting clinical diagnosis and decision-making.\n\n3. **Attribute Hallucinations**: Manifest as incorrect judgments or descriptions of the size, shape, location, and number of organs and pathologies.\n\n4. **Confusion prompt-induced hallucinations (prompt-induced Hallucinations)**: This type of hallucination is manifested in the input model of the prompt contains certain interference information, can be divided into two kinds: the first is the input contains a prefix that interferes with the degree of confidence of the model; the other is the prompt contains the description of the factual content of the image is opposite to that of the model caused by misleading. These types of illusions are usually caused by a lack of plausibility or factuality in the prompt, and examine the robustness of the model in a particular context.\n\n5. **Minor Hallucinations (Hallucinations without serious consequences)**: These hallucinations are often manifested as judgements about the modality of medical images, the way they are collected, and they do not have serious consequences for clinical diagnosis and treatment.\n\n6. **Correct Statements**: No hallucinations are present; the statement semantically matches the ground truth.\n\nHere is the question received by Med-VLM, the output of it and the ground-truth:\n\nquestion: Is the region depicted in this photograph located cranial to the diaphragm?\nMed-VLM answer: Yes, the computed tomography (CT) image is taken above the diaphragm.\nground-truth: no\n\nPlease judge Med-VLM's hallucination type based on the above hallucination hierarchy according to the image and the ground-truth, just judge without giving any explanation."
+                },
+                {
+                    "from": "gpt",
+                    "value": "Minor Hallucinations"
+                }
+            ],
+            "image": "rad/synpic21604.jpg",
+            "classification_label": 4
+        }        
+      ]
+    }
+    ]
+}
