@@ -1,5 +1,8 @@
 #  Med-HallMark Benchmark Description
 ![teaser](intro.png)
+> Illustration of statistical information and construction content of Med-HallMark.
+  We show separately (a) multi-task hallucination support, (b) multifaceted hallucination data, and (c) hierarchical hallucination categorization.
+
 In the proposed Med-HallMark benchmark, the
 `Conventional.json`, `Confidence_weakening.json`, `Counterfactual.json`, and `Irg.json` represent data instances of `conventional`, `confidence weakening`, `counterfactual`, and `image depiction questions`, respectively, which are used in the baseline models for evaluations.
 
