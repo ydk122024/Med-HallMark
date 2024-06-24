@@ -1,5 +1,6 @@
 #  Med-HallMark Benchmark Description
-![teaser](intro.png)
+![image](https://github.com/ydk122024/Med-HallMark/assets/125014501/299f4187-ada4-4c74-941a-0bfad99167d5)
+
 > Illustration of statistical information and construction content of Med-HallMark.
   We show separately (a) multi-task hallucination support, (b) multifaceted hallucination data, and (c) hierarchical hallucination categorization.
 
